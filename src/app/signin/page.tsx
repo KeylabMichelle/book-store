@@ -12,7 +12,6 @@ const SignInPage = () => {
       {/* Form Section */}
       <div className="flex flex-1 items-center justify-center">
         <form className="w-80">
-          {/* Title - Centered */}
           <h1 className="text-3xl font-bold text-primaryGreen mb-8 text-center">Welcome Back!</h1>
 
           {/* Email Input */}
