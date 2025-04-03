@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const SignInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="flex h-screen">
@@ -58,11 +60,11 @@ const SignInPage = () => {
             className="w-full py-2 rounded-full flex items-center justify-center mb-4 border-2"
             style={{
               backgroundColor: 'white',
-              borderColor: '#6E947C', // Set the border color
-              color: '#3F6634', // Set the text color
+              borderColor: '#6E947C',
+              color: '#3F6634',
             }}>
 
-            {/* Google Sign In Icon (Following dev guidelines) */}
+            {/* Google Sign In Icon */}
             <span className="w-5 h-5 mr-2 font-bold text-lg" style={{ color: '#4285F4' }}>
               <svg
                 version="1.1"
@@ -92,6 +94,21 @@ const SignInPage = () => {
             </span>
             Sign in with Google
           </button>
+
+          {/* Go back to home */}
+          <div className="mb-6 text-center">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push('/');
+              }}
+              className="flex items-center justify-center text-sm text-[#6E947C] hover:text-[#3F6634]"
+            >
+              <ArrowLeft size={16} className="mr-2" />
+              Back
+            </a>
+          </div>
         </form>
       </div>
 
